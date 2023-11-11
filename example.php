@@ -3,6 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Fatkulnurk\AdsmediaSmsGateway\Config\Config;
+use Fatkulnurk\AdsmediaSmsGateway\Enums\Config as ConfigEnum;
 
 // example for set config
 Config::getInstance()
@@ -11,6 +12,11 @@ Config::getInstance()
 // example for get config
 echo Config::getInstance()
     ->get('key');
+
+Fatkulnurk\AdsmediaSmsGateway\Config\Config::getInstance()
+    ->set(ConfigEnum::API_KEY->name, '')
+    ->set(ConfigEnum::URL_ENDPOINT->name, '')
+    ->set(ConfigEnum::CALLBACK_URL->name, '')
 
 
 // send message
